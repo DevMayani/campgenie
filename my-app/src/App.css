@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -27,6 +28,17 @@
 .App-link {
   color: #61dafb;
 }
+.icon{
+  width: 15px;
+  height: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+ 
+}
+
+.icon_active {
+  transform: rotateZ(180deg);
+}
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +47,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media (min-width:768px) {
+  .icon{
+    width: 30px;
+    height: 30px;
+}
+}
+
+@media (min-width:1024px) {
+  .icon{
+    width: 20px;
+    height: 20px;
+}
+}
+
+@media (min-width:1280px) {
+  .icon{
+    width: 25px;
+    height: 25px;
+}
 }

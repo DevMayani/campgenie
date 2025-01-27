@@ -2,20 +2,64 @@ import React, { useState } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('home'); // Track active link
 
   return (
-    <nav className="bg-gray-800 text-red-600">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <h1 className="text-2xl font-bold">SKYLINE</h1>
+    <nav className='border'>
+      <div className="container mx-auto flex justify-between items-center py-4 px-6 lg:px-10 xl:px-10">
+        <div>
+         <a href="/">
+         <img src="/assets/logo.svg" alt="logo-img" />
+         </a>
+        </div>
+
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-6">
-          <li className="hover:text-blue-500 cursor-pointer">Home</li>
-          <li className="hover:text-blue-500 cursor-pointer">About</li>
-          <li className="hover:text-blue-500 cursor-pointer">Services</li>
-          <li className="hover:text-blue-500 cursor-pointer">Learn More</li>
+        <ul className="hidden lg:flex items-center gap-6">
+          <li
+            className={`cursor-pointer ${activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('home')}
+          >
+            Home
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'features' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('features')}
+          >
+            Features
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('about')}
+          >
+            About Us
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'blog' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('blog')}
+          >
+            Blog
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'faq' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('faq')}
+          >
+            FAQ
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'contact' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('contact')}
+          >
+            Contact Us
+          </li>
+          <li className="cursor-pointer">
+            <div className="px-8 bg-lite text-white flex justify-center items-center rounded-md">
+              <button className="py-2 w-full text-center">Download</button>
+            </div>
+          </li>
         </ul>
+
         {/* Mobile menu icon */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,14 +79,33 @@ const Navbar = () => {
         </div>
       </div>
 
-      
       {/* Mobile menu */}
       {isOpen && (
-        <ul className="flex flex-col gap-4 bg-gray-700 py-4 px-6 md:hidden">
-          <li className="hover:text-blue-500 cursor-pointer">Home</li>
-          <li className="hover:text-blue-500 cursor-pointer">About</li>
-          <li className="hover:text-blue-500 cursor-pointer">Services</li>
-          <li className="hover:text-blue-500 cursor-pointer">Learn More</li>
+        <ul className="flex flex-col gap-4 py-4 px-6 border drop-shadow-xl lg:hidden">
+          <li
+            className={`cursor-pointer ${activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('home')}
+          >
+            Home
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('about')}
+          >
+            About
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'services' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('services')}
+          >
+            Services
+          </li>
+          <li
+            className={`cursor-pointer ${activeLink === 'learn' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            onClick={() => setActiveLink('learn')}
+          >
+            Learn More
+          </li>
         </ul>
       )}
     </nav>
