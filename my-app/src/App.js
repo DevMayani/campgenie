@@ -8,6 +8,7 @@ import SectionOne from './components/sectionOne/SectionOne';
 import Sectionsix from './components/Sectionsix/sectionsix';
 import Sectionthree from './components/sectionThree/Sectionthree';
 import Sectiontwo from './components/sectionTwo/Sectiontwo';
+import Slidersection from './components/sliderSection/Slidersection';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <SectionOne />
       <Sectiontwo />
+      <Slidersection />
      <Sectionthree />
       <Sectionfour />
       <Fao />

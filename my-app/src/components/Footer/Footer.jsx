@@ -39,17 +39,40 @@ const Footer = () => {
   const support = [
     {
       id: 1,
-      icons: <a href="https://instagram.com/theragist?igshid=NzZlODBkYWE4Ng==" target="_blank" rel="noopener noreferrer"><IoCallOutline className='h-4 w-4 md:h-5 md:w-5' /></a>,
-      labelone: '+234 8093555637, ',
-      labeltwo: '+234 9035765737',
+      icons: <IoCallOutline className="h-4 w-4 md:h-5 md:w-5" />,
+      labelone: (
+        <a
+          href="tel:+2348093555637"
+          className="text-xs md:text-xl lg:text-xs font-light"
+        >
+          +234 8093555637
+        </a>
+      ),
+      labeltwo: (
+        <a
+          href="tel:+2349035765737"
+          className="text-xs md:text-xl lg:text-xs font-light "
+        >
+          +234 9035765737
+        </a>
+      ),
     },
     {
       id: 2,
-      icons: <a href="https://www.linkedin.com/in/eniola-oni-8ba018180?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><MdOutlineMail className='h-4 w-4 md:h-5 md:w-5' /></a>,
-      labelone: 'Support@campugenie.com',
+      icons: <MdOutlineMail className="h-4 w-4 md:h-5 md:w-5" />,
+      labelone: (
+        <a
+          href="mailto:support@campusgenie.com"
+          className="text-xs md:text-xl lg:text-xs font-light"
+        >
+          Support@campus.com
+        </a>
+      ),
     },
   ];
+  
 
+  
   const initialValues = {
     email: '',
   };
@@ -76,40 +99,47 @@ const Footer = () => {
           <p className='text-xs text-start leading-normal md:text-xl lg:text-xs xl:text-sm lg:w-[80%] '>Join our newsletter to stay up to date on school news, new features and releases.</p>
 
           <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={onSubmit}
-          >
-            {({ isSubmitting }) => (
-              <Form className='flex flex-col lg:flex-row gap-y-2 md:gap-y-4 gap-x-2 pt-0 lg:w-[80%] lg:py-2'>
-                <Field
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  className="outline-none bg-transparent border rounded-md px-2 py-2 text-xs md:text-xl lg:text-xs xl:text-sm lg:w-[50%]"
-                />
-                <button
-                  type="submit"
-                  className="text-lite bg-white rounded-md px-2 w-[30%] py-1 text-xs md:text-xl lg:text-xs xl:text-sm"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Submitting...' : 'Subscribe'}
-                </button>
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="text-red-500 text-xs mt-2"
-                />
-              </Form>
-            )}
-          </Formik>
+  initialValues={initialValues}
+  validationSchema={validationSchema}
+  onSubmit={onSubmit}
+>
+  {({ isSubmitting, errors, touched }) => (
+    <>
+      <Form className='flex flex-col lg:flex-row gap-y-2 md:gap-y-4 gap-x-2 pt-0 lg:w-[80%] lg:py-2'>
+        <Field
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          className={`outline-none bg-transparent border rounded-md px-2 py-2 text-xs md:text-xl lg:text-xs xl:text-sm lg:w-[50%] ${
+            errors.email && touched.email ? 'border-red-500' : ''
+          }`}
+        />
+        <button
+          type="submit"
+          className="text-lite bg-white rounded-md px-2 w-[30%] py-1 text-xs md:text-xl lg:text-xs xl:text-sm"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Submitting...' : 'Subscribe'}
+        </button>
+      </Form>
+      
+      {/* Error message positioned underneath the container */}
+      {errors.email && touched.email && (
+        <div className=" text-red-500 text-xs flex justify-start items-center">
+          {errors.email}
+        </div>
+      )}
+    </>
+  )}
+</Formik>
+
 
           <p className='text-xs md:text-xl lg:text-xs xl:text-sm text-start lg:w-[80%] '>
             By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
           </p>
         </div>
 
-        <div className='flex-1 grid grid-cols-2 lg:grid-cols-3 gap-y-8 py-5 md:py-10 px-3  md:px-6 lg:px-0'>
+        <div className='flex-1 grid grid-cols-2 lg:grid-cols-3 gap-y-8 py-5 md:py-10 px-3  md:px-6 lg:px-0 '>
           {/* Column 1 */}
           <div className=''>
             <p className='font-bold text-start text-sm md:text-xl lg:text-sm xl:text-base'>Company</p>
@@ -129,7 +159,7 @@ const Footer = () => {
             <div className='flex flex-col gap-2 lg:gap-4 items-start mt-3 text-start text-xs md:text-xl lg:text-xs xl:text-sm font-light'>
               {support.map((item) => (
                 <div key={item.id} className='flex items-center justify-between gap-2'>
-                  <p>{item.icons}</p>
+                  {/* <p>{item.icons}</p> */}
                   <div>
                     <p className='text-xs md:text-xl lg:text-xs font-light'>{item.labelone}</p>
                     <p className='text-xs md:text-xl lg:text-xs font-light'>{item.labeltwo}</p>
@@ -160,7 +190,7 @@ const Footer = () => {
                 <div key={item.id} className='flex items-center justify-between gap-2'>
                   <p>{item.icons}</p>
                   <div>
-                    <p className='text-xs md:text-xl lg:text-xs font-light'>{item.labelone}</p>
+                    <p className='text-xs md:text-xl lg:text-xs font-light underline-none'>{item.labelone}</p>
                     <p className='text-xs md:text-xl lg:text-xs font-light'>{item.labeltwo}</p>
                   </div>
                 </div>
