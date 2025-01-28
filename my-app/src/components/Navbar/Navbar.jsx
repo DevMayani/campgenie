@@ -5,48 +5,60 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home'); // Track active link
 
   return (
-    <nav className='border'>
+    <nav className="border relative">
       <div className="container mx-auto flex justify-between items-center py-4 px-6 lg:px-10 xl:px-10">
         <div>
-         <a href="/">
-         <img src="/assets/logo.svg" alt="logo-img" />
-         </a>
+          <a href="/">
+            <img src="/assets/logo.svg" alt="logo-img" />
+          </a>
         </div>
 
         {/* Desktop menu */}
         <ul className="hidden lg:flex items-center gap-6">
           <li
-            className={`cursor-pointer ${activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('home')}
           >
             Home
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'features' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'features' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('features')}
           >
             Features
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('about')}
           >
             About Us
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'blog' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'blog' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('blog')}
           >
             Blog
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'faq' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'faq' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('faq')}
           >
             FAQ
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'contact' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'contact' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('contact')}
           >
             Contact Us
@@ -61,47 +73,76 @@ const Navbar = () => {
         {/* Mobile menu icon */}
         <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            {isOpen ? (
+              // Cancel (Close) Icon
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              // Menu Icon
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       {isOpen && (
-        <ul className="flex flex-col items-start gap-4 py-4 px-6 border drop-shadow-xl lg:hidden">
+        <ul
+          className="absolute top-full left-0 w-full bg-white flex flex-col items-start gap-4 py-4 px-6 border drop-shadow-xl lg:hidden z-10"
+        >
           <li
-            className={`cursor-pointer ${activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('home')}
           >
             Home
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('about')}
           >
             About
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'services' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'services' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('services')}
           >
             Services
           </li>
           <li
-            className={`cursor-pointer ${activeLink === 'learn' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
+            className={`cursor-pointer ${
+              activeLink === 'learn' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
             onClick={() => setActiveLink('learn')}
           >
             Learn More

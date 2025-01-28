@@ -64,7 +64,7 @@ const Sectiontwo = () => {
   }, []);
 
   return (
-    <div  className='py-10'  style={{
+    <div  className='py-10 md:py-20 lg:py-10'  style={{
       backgroundImage: `url('${bgImage}')`,
       backgroundPosition: 'center', // Adjust this to reposition the star
       backgroundSize: 'cover',
@@ -82,11 +82,11 @@ const Sectiontwo = () => {
         companion, helping <br className="block md:hidden lg:block" /> you achieve academic success and campus <br className="block lg:hidden" /> convenience
       </p>
 
-      <div className="grid lg:grid-cols-2 gap-x-32">
+      <div className="grid lg:grid-cols-2 gap-y-2 md:gap-y-8 gap-x-32">
   {details.map((datum, index) => (
     <div
       key={datum.id}
-      className={`flex flex-col items-center m-4 p-6 w-auto ${
+      className={`flex flex-col items-center m-4 p-6 w-auto md:gap-4 lg:gap-0 ${
         index === 2 ? 'lg:translate-x-[-25%]' : '' // Shift 3rd item left on desktop
       } ${
         index === 3 ? 'lg:translate-x-[25%]' : '' // Shift 4th item right on desktop
@@ -95,9 +95,9 @@ const Sectiontwo = () => {
       <img
         src={datum.pic}
         alt={datum.title}
-        className="w-10 h-10 mb-4 object-cover"
+        className="w-10 h-10 md:h-14 md:w-14 lg:h-10 lg:w-10 mb-4 object-cover"
       />
-      <p className="font-semibold text-xl md:text-3xl lg:text-xl text-center font-exo text-gray-900">
+      <p className="font-semibold text-xl md:text-4xl lg:text-xl text-center font-exo text-gray-900">
         {datum.title}
       </p>
       <p className="text-sm md:text-2xl lg:text-sm text-center text-gray-600 mt-2 lg:w-[100%] xl:w-[90%] leading-6 md:leading-10 lg:leading-loose xl:leading-7 font-nunito-sans">
@@ -106,7 +106,7 @@ const Sectiontwo = () => {
     </div>
   ))}
 </div>
-<div className='h-[70vh] block lg:hidden'>
+<div className='h-[70vh] md:h-[120vh] block lg:hidden'>
   <p className='hidden'>a</p>
 </div>
     </div>

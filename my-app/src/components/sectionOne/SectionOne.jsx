@@ -36,7 +36,7 @@ const SectionOne = () => {
           Welcome to <span className="text-lite">CampusGenie</span> <br /> Your <span className="text-lite">Key</span> to{' '}
           <span className="text-lite">Academic</span> <br /> Excellence
         </p>
-        <p className="text-start text-xs md:text-xl lg:text-xs xl:text-base lg:w-[80%] font-nunito-sans py-4 lg:py-6 leading-6 md:leading-10 lg:leading-loose xl:leading-7 font-normal text-gray-500">
+        <p className="text-start text-xs md:text-2xl lg:text-xs xl:text-base lg:w-[80%] font-nunito-sans py-4 lg:py-6 leading-6 md:leading-10 lg:leading-loose xl:leading-7 font-normal text-gray-500">
           Unleash Academic success with CampusGenie: your all-in-one app designed to streamline your academic journey. From JAMB & WAEC
           past questions to securing the perfect hostel, and landing the best internships, Campus Genius is here to empower your
           academic success.
