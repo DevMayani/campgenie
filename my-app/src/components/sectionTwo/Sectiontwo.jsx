@@ -106,6 +106,9 @@ const Sectiontwo = () => {
     </div>
   ))}
 </div>
+<div className='h-[70vh] block lg:hidden'>
+  <p className='hidden'>a</p>
+</div>
     </div>
     </div>
   

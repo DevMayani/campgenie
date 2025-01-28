@@ -81,7 +81,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <ul className="flex flex-col gap-4 py-4 px-6 border drop-shadow-xl lg:hidden">
+        <ul className="flex flex-col items-start gap-4 py-4 px-6 border drop-shadow-xl lg:hidden">
           <li
             className={`cursor-pointer ${activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'}`}
             onClick={() => setActiveLink('home')}
