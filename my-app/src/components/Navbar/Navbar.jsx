@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,8 @@ const Navbar = () => {
             }`}
             onClick={() => setActiveLink('home')}
           >
-            Home
+              <Link to="/">Home</Link>
+           
           </li>
           <li
             className={`cursor-pointer ${
@@ -37,7 +39,7 @@ const Navbar = () => {
             }`}
             onClick={() => setActiveLink('about')}
           >
-            About Us
+           <Link to="/about">About Us</Link>
           </li>
           <li
             className={`cursor-pointer ${
@@ -45,7 +47,7 @@ const Navbar = () => {
             }`}
             onClick={() => setActiveLink('blog')}
           >
-            Blog
+          <Link to="/blog">Blog</Link>
           </li>
           <li
             className={`cursor-pointer ${
@@ -61,7 +63,8 @@ const Navbar = () => {
             }`}
             onClick={() => setActiveLink('contact')}
           >
-            Contact Us
+             <Link to="/contact"> Contact Us</Link>
+           
           </li>
           <li className="cursor-pointer">
             <div className="px-8 bg-lite text-white flex justify-center items-center rounded-md">
@@ -121,7 +124,15 @@ const Navbar = () => {
             }`}
             onClick={() => setActiveLink('home')}
           >
-            Home
+           <Link to="/">Home</Link>
+          </li>
+          <li
+            className={`cursor-pointer ${
+              activeLink === 'features' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
+            onClick={() => setActiveLink('features')}
+          >
+           <Link to="/">Features</Link>
           </li>
           <li
             className={`cursor-pointer ${
@@ -129,24 +140,45 @@ const Navbar = () => {
             }`}
             onClick={() => setActiveLink('about')}
           >
-            About
+           <Link to="/about">About Us</Link>
           </li>
           <li
             className={`cursor-pointer ${
-              activeLink === 'services' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === 'blog' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
             }`}
-            onClick={() => setActiveLink('services')}
+            onClick={() => setActiveLink('blog')}
           >
-            Services
+           <Link to="/blog">Blog</Link>
           </li>
           <li
             className={`cursor-pointer ${
-              activeLink === 'learn' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === 'faq' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
             }`}
-            onClick={() => setActiveLink('learn')}
+            onClick={() => setActiveLink('faq')}
           >
-            Learn More
+           <Link to="/blog">FAQ</Link>
           </li>
+          <li
+            className={`cursor-pointer ${
+              activeLink === 'contact' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+            }`}
+            onClick={() => setActiveLink('contact')}
+          >
+             <Link to="/contact"> Contact Us</Link>
+           
+          </li>
+          
+          <li
+  className={`cursor-pointer ${
+    activeLink === 'learn' ? 'border-none' : 'hover:text-lite'
+  }`}
+  onClick={() => setActiveLink('learn')}
+>
+  <div className="px-8 bg-lite text-white flex justify-center items-center rounded-md">
+    <button className="py-2 w-full text-center">Download</button>
+  </div>
+</li>
+
         </ul>
       )}
     </nav>
