@@ -77,7 +77,7 @@ const Navbar = () => {
               // Cancel (Close) Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-6 w-6 md:w-10 md:h-10 lg:w-6 lg:h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -93,7 +93,7 @@ const Navbar = () => {
               // Menu Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-6 w-6 md:w-10 md:h-10 lg:w-6 lg:h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
