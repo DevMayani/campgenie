@@ -1,28 +1,24 @@
 
-import './App.css';
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Fao from './components/Fao/Fao';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import Sectionfour from './components/sectionFour/Sectionfour';
-import SectionOne from './components/sectionOne/SectionOne';
-import Sectionsix from './components/Sectionsix/sectionsix';
-import Sectionthree from './components/sectionThree/Sectionthree';
-import Sectiontwo from './components/sectionTwo/Sectiontwo';
-import Slidersection from './components/sliderSection/Slidersection';
+import Home from '../src/pages/Home'
+import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <SectionOne />
-      <Sectiontwo />
-      <Slidersection />
-     <Sectionthree />
-      <Sectionfour />
-      <Fao />
-      <Sectionsix />
-      <Footer />
-    </div>
+    <Router>
+    <Navbar /> {/* This will appear on all pages */}
+    <Routes>
+      <Route path="/" element={<Home />} />
+      
+    </Routes>
+    <Footer />
+  </Router>
   );
 }
 
