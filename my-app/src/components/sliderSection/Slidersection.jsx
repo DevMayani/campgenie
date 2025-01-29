@@ -32,12 +32,12 @@ const Slidersection = () => {
      <div className='flex flex-row items-start '>
     
             
-     <div className='lg:flex-1 '>
+     <div className='flex-1 '>
     
             <p className='pb-4 md:pb-8  font-exo text-xl md:text-4xl lg:text-3xl xl:text-4xl text-start font-semibold' style={{color:'#3F8361'}}>Explore School worldwide</p>
             <p className=' text-sm md:text-2xl lg:text-sm xl:text-lg text-start text-gray-900 mt-2 lg:w-[60%] xl:w-[70%] leading-6 md:leading-10 lg:leading-6 xl:leading-7 font-nunito-sans font-light'>Discover universities and colleges across the globe! Get insights into their programs, admission requirements, and exclusive scholarships to kickstart your study-abroad journey.</p>
      </div>
-     <div className='lg:flex-1 flex justify-center'>
+     <div className='flex-1 flex justify-center '>
 <img src="/assets/iphone16pro.svg" alt="phone-img"   className="w-full h-auto" />
 <img src="/assets/iphone16.svg" alt="phone-img" className='hidden lg:block w-full h-auto' />
      </div>
