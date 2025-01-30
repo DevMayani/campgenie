@@ -64,7 +64,7 @@ const Sectiontwo = () => {
   }, []);
 
   return (
-    <div  className='py-10 md:py-20 lg:py-10'  style={{
+    <div id='features'  className='py-10 md:py-20 lg:py-10'  style={{
       backgroundImage: `url('${bgImage}')`,
       backgroundPosition: 'center', // Adjust this to reposition the star
       backgroundSize: 'cover',

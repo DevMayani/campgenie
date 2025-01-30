@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="App">
       <SectionOne />
-      <Sectiontwo />
+      <Sectiontwo  />
       <Slidersection />
      <Sectionthree />
       <Sectionfour />

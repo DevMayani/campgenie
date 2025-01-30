@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home'); // Track active link
+  const [activeLink, setActiveLink] = useState("home"); // Track active link
+  const navigate = useNavigate();
+const location = useLocation();
+
 
   return (
     <nav className="border relative">
@@ -18,53 +22,79 @@ const Navbar = () => {
         <ul className="hidden lg:flex items-center gap-6">
           <li
             className={`cursor-pointer ${
-              activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === "home"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
             }`}
-            onClick={() => setActiveLink('home')}
+            onClick={() => setActiveLink("home")}
           >
-              <Link to="/">Home</Link>
-           
+            <Link to="/">Home</Link>
+          </li>
+          <li
+  className={`cursor-pointer ${
+    activeLink === "features"
+      ? "border-b-2 border-green-500 py-1"
+      : "hover:text-lite"
+  }`}
+  onClick={() => {
+    setActiveLink("features");
+
+    if (location.pathname !== "/") {
+      // Redirect to home first
+      navigate("/");
+
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      // Scroll directly if already on home page
+      document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  <span>Features</span>
+</li>
+
+          <li
+            className={`cursor-pointer ${
+              activeLink === "about"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
+            }`}
+            onClick={() => setActiveLink("about")}
+          >
+            <Link to="/about">About Us</Link>
           </li>
           <li
             className={`cursor-pointer ${
-              activeLink === 'features' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === "blog"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
             }`}
-            onClick={() => setActiveLink('features')}
+            onClick={() => setActiveLink("blog")}
           >
-            Features
+            <Link to="/">Blog</Link>
           </li>
           <li
             className={`cursor-pointer ${
-              activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === "faq"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
             }`}
-            onClick={() => setActiveLink('about')}
-          >
-           <Link to="/about">About Us</Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'blog' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('blog')}
-          >
-          <Link to="/blog">Blog</Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'faq' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('faq')}
+            onClick={() => setActiveLink("faq")}
           >
             FAQ
           </li>
           <li
             className={`cursor-pointer ${
-              activeLink === 'contact' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === "contact"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
             }`}
-            onClick={() => setActiveLink('contact')}
+            onClick={() => setActiveLink("contact")}
           >
-             <Link to="/contact"> Contact Us</Link>
-           
+            <Link to="/contact"> Contact Us</Link>
           </li>
           <li className="cursor-pointer">
             <div className="px-8 bg-lite text-white flex justify-center items-center rounded-md">
@@ -115,70 +145,94 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <ul
-          className="absolute top-full left-0 w-full bg-white flex flex-col items-start gap-4 py-4 px-6 border drop-shadow-xl lg:hidden z-10"
-        >
+        <ul className="absolute top-full left-0 w-full bg-white flex flex-col items-start gap-4 py-4 px-6 border drop-shadow-xl lg:hidden z-10">
           <li
             className={`cursor-pointer ${
-              activeLink === 'home' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
+              activeLink === "home"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
             }`}
-            onClick={() => setActiveLink('home')}
+            onClick={() => setActiveLink("home")}
           >
-           <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'features' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('features')}
-          >
-           <Link to="/">Features</Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'about' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('about')}
-          >
-           <Link to="/about">About Us</Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'blog' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('blog')}
-          >
-           <Link to="/blog">Blog</Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'faq' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('faq')}
-          >
-           <Link to="/blog">FAQ</Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
-              activeLink === 'contact' ? 'border-b-2 border-green-500 py-1' : 'hover:text-lite'
-            }`}
-            onClick={() => setActiveLink('contact')}
-          >
-             <Link to="/contact"> Contact Us</Link>
-           
-          </li>
-          
           <li
   className={`cursor-pointer ${
-    activeLink === 'learn' ? 'border-none' : 'hover:text-lite'
+    activeLink === "features"
+      ? "border-b-2 border-green-500 py-1"
+      : "hover:text-lite"
   }`}
-  onClick={() => setActiveLink('learn')}
+  onClick={() => {
+    setActiveLink("features");
+    
+    if (location.pathname !== "/") {
+      // Redirect to home first
+      navigate("/");
+      
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      // Direct scroll on the home page
+      document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
 >
-  <div className="px-8 bg-lite text-white flex justify-center items-center rounded-md">
-    <button className="py-2 w-full text-center">Download</button>
-  </div>
+  Features
 </li>
 
+          <li
+            className={`cursor-pointer ${
+              activeLink === "about"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
+            }`}
+            onClick={() => setActiveLink("about")}
+          >
+            <Link to="/about">About Us</Link>
+          </li>
+          <li
+            className={`cursor-pointer ${
+              activeLink === "blog"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
+            }`}
+            onClick={() => setActiveLink("blog")}
+          >
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li
+            className={`cursor-pointer ${
+              activeLink === "faq"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
+            }`}
+            onClick={() => setActiveLink("faq")}
+          >
+            <Link to="/blog">FAQ</Link>
+          </li>
+          <li
+            className={`cursor-pointer ${
+              activeLink === "contact"
+                ? "border-b-2 border-green-500 py-1"
+                : "hover:text-lite"
+            }`}
+            onClick={() => setActiveLink("contact")}
+          >
+            <Link to="/contact"> Contact Us</Link>
+          </li>
+
+          <li
+            className={`cursor-pointer ${
+              activeLink === "learn" ? "border-none" : "hover:text-lite"
+            }`}
+            onClick={() => setActiveLink("learn")}
+          >
+            <div className="px-8 bg-lite text-white flex justify-center items-center rounded-md">
+              <button className="py-2 w-full text-center">Download</button>
+            </div>
+          </li>
         </ul>
       )}
     </nav>

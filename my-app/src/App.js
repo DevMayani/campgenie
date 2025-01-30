@@ -10,6 +10,8 @@ import About from '../src/pages/about'
 import Contact from '../src/pages/contact'
 import NotFound from "../src/pages/notFound";
 import Blog from '../src/pages/blog';
+import TermsOfService from '../src/pages/termofservice'
+import Privacypolicy from '../src/pages/privacypolicy'
 import './App.css';
 
 
@@ -22,7 +24,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/termofservice" element={<TermsOfService />} />
+        <Route path="/privacypolicy" element={<Privacypolicy/>} />
         <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />
