@@ -1,9 +1,10 @@
 import React from 'react'
+import Blogsection from '../components/blogSection/Blogsection';
 
 const Blog = () => {
   return (
     <div>
-      <p>Blog</p>
+     <Blogsection />
     </div>
   )
 }

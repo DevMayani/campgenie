@@ -74,7 +74,7 @@ const location = useLocation();
             }`}
             onClick={() => setActiveLink("blog")}
           >
-            <Link to="/">Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li
             className={`cursor-pointer ${
@@ -210,7 +210,7 @@ const location = useLocation();
             }`}
             onClick={() => setActiveLink("faq")}
           >
-            <Link to="/blog">FAQ</Link>
+            <Link to="">FAQ</Link>
           </li>
           <li
             className={`cursor-pointer ${

@@ -102,15 +102,15 @@ const Sectionfour = () => {
 
                   <div className='flex items-center justify-between gap-1  '>
                     <div className='flex items-center justify-start gap-1 md:gap-2 lg:gap-1'>
-                      <MdOutlineCalendarMonth  className="h-4 w-4 md:h-8 md:w-8 lg:h-5 lg:w-5 xl:h-6 xl:w-6" style={{ color: '#549172' }} />
+                      <MdOutlineCalendarMonth  className="h-4 w-4 md:h-7 md:w-7 lg:h-4 lg:w-4 xl:h-5 xl:w-5" style={{ color: '#549172' }} />
                       <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>{datum.date}</p>
                     </div>
                     <div className='flex items-center justify-start gap-1 md:gap-2 lg:gap-1 '>
-                      <FaRegClock className="h-4 w-4 md:h-8 md:w-8 lg:h-5 lg:w-5 xl:h-6 xl:w-6" style={{ color: '#549172' }} />
+                      <FaRegClock className="h-4 w-4 md:h-7 md:w-7 lg:h-4 lg:w-4 xl:h-5 xl:w-5" style={{ color: '#549172' }} />
                       <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>{datum.duration}</p>
                     </div>
                     <div className='flex items-center justify-start gap-1 md:gap-2 lg:gap-1 '>
-                      <GrView className="h-4 w-4 md:h-8 md:w-8 lg:h-5 lg:w-5 xl:h-6 xl:w-6" style={{ color: '#549172' }} />
+                      <GrView className="h-4 w-4 md:h-7 md:w-7 lg:h-4 lg:w-4 xl:h-5 xl:w-5" style={{ color: '#549172' }} />
                       <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>{datum.views}</p>
                     </div>
                   </div>
