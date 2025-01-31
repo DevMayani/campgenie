@@ -5,6 +5,10 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import { FaCalendarDays, FaRegClock } from "react-icons/fa6";
 import { GrView } from "react-icons/gr";
 import { MdOutlineCalendarMonth } from "react-icons/md";
+import { FaFacebookF,FaTwitter,FaTelegramPlane,FaLinkedinIn,FaWhatsapp} from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { BiLike,BiDislike } from "react-icons/bi";
+import { FaRegComments } from "react-icons/fa6";
 
 const BlogPost = ({ blogs }) => {
   const { id } = useParams();
@@ -65,6 +69,84 @@ const BlogPost = ({ blogs }) => {
       dat:'Saturday, August, 2024',
     },
     
+  ]
+   const social = [
+    {
+      id: 1,
+      icon: <div className='h-8 w-8 flex justify-center items-center' style={{ backgroundColor: '#4267B2' }}>
+        <a href="https://instagram.com/theragist?igshid=NzZlODBkYWE4Ng==" target="_blank" rel="noopener noreferrer"><FaFacebookF className='h-3 w-3 md:h-5 md:w-5 lg:h-3 lg:w-3 text-white' /></a>
+      
+      </div>
+    },
+    {
+      id: 2,
+      icon: <div className='h-8 w-8 flex justify-center items-center' style={{ backgroundColor: '#60D669' }}>
+      <a href="https://instagram.com/theragist?igshid=NzZlODBkYWE4Ng==" target="_blank" rel="noopener noreferrer"><FaWhatsapp className='h-3 w-3 md:h-5 md:w-5 lg:h-3 lg:w-3 text-white' /></a>
+
+    </div>
+    },
+    {
+      id:3,
+     icon: <div className='h-8 w-8 flex justify-center items-center' style={{ backgroundColor: '#1DA1F2' }}>
+        <a href="https://instagram.com/theragist?igshid=NzZlODBkYWE4Ng==" target="_blank" rel="noopener noreferrer"><FaTwitter className='h-3 w-3 md:h-5 md:w-5 lg:h-3 lg:w-3  text-white' /></a>
+   
+      </div>
+    },
+    {
+      id: 4,
+      icon: <div className='h-8 w-8 flex justify-center items-center' style={{ backgroundColor: '#2AABEE' }}>
+      <a href="https://instagram.com/theragist?igshid=NzZlODBkYWE4Ng==" target="_blank" rel="noopener noreferrer"><FaTelegramPlane className='h-3 w-3 md:h-5 md:w-5 lg:h-3 lg:w-3  text-white' /></a>
+   
+    </div>
+    },
+  
+  ];
+  const comment=[
+    {
+      id:1,
+      picture:'/assets/esther.svg',
+      name:'Esther Howard',
+      currentDate:'July 25, 2021 2:30 PM',
+      comment:'I guess the IA is looking good for now. Let’s get started with next process',
+      like:'2',
+      dislike:'0',
+    },
+    {
+      id:2,
+      picture:'/assets/esther.svg',
+      name:'Esther Howard',
+      currentDate:'July 25, 2021 2:30 PM',
+      comment:'I guess the IA is looking good for now. Let’s get started with next process',
+      like:'2',
+      dislike:'0',
+    },
+    {
+      id:3,
+      picture:'/assets/esther.svg',
+      name:'Esther Howard',
+      currentDate:'July 25, 2021 2:30 PM',
+      comment:'I guess the IA is looking good for now. Let’s get started with next process',
+      like:'2',
+      dislike:'0',
+    },
+    {
+      id:4,
+      picture:'/assets/esther.svg',
+      name:'Esther Howard',
+      currentDate:'July 25, 2021 2:30 PM',
+      comment:'I guess the IA is looking good for now. Let’s get started with next process',
+      like:'2',
+      dislike:'0',
+    },
+    {
+      id:5,
+      picture:'/assets/esther.svg',
+      name:'Esther Howard',
+      currentDate:'July 25, 2021 2:30 PM',
+      comment:'I guess the IA is looking good for now. Let’s get started with next process',
+      like:'2',
+      dislike:'0',
+    },
   ]
 
   // Check if blogs is an array
@@ -134,10 +216,22 @@ const BlogPost = ({ blogs }) => {
            
           </div>
           <div>
-              <p className="font-exo text-xs md:text-2xl lg:text-sm xl:text-lg">Share Article(23)</p>
+              <p className="font-exo text-xs md:text-2xl lg:text-sm xl:text-lg">Share Article:(23)</p>
+              <div className='flex justify-start items-center gap-4 py-3'>
+    {
+     social.map((datum) => (
+
+      <div key={datum.id} className='flex justify-start items-center'>
+        
+       <p>{datum.icon}</p>
+        </div>
+     ))
+    }
+    </div>
             </div>
       </div>
      </div>
+    
 
      <div className='flex justify-between items-start pt-10 md:pt-20 pb-5'>
           <div className=''>
@@ -181,6 +275,59 @@ const BlogPost = ({ blogs }) => {
             ))
           }
         </div>
+        <div className='py-5 md:py-10 lg:py-6 '>
+     <p className="font-exo text-xs md:text-2xl lg:text-sm xl:text-lg">Comments</p>
+    <div className='py-3 md:py-5 lg:py-3 xl:py-4'>
+    <div className='border p-3 md:p-5 rounded-md w-[100%] lg:w-[40%] xl:w-[35%] flex flex-col gap-4 md:gap-6'>
+      {
+        comment.map((idea) => (
+        <div>
+            <div key={idea.id} className='flex items-start gap-4 pb-2 md:pb-4'>
+            <img src={idea.picture} alt='user-img' />
+            <div className='flex flex-col gap-2'>
+              <p className='text-start text-sm md:text-2xl lg:text-sm text-gray-900 font-bold'>{idea.name}</p>
+              <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>{idea.currentDate}</p>
+              <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-600 font-nunito-sans font-light w-[90%] xl:w-[80%]'>{idea.comment}</p>
+             <div className='flex items-center gap-4'>
+             <div className='flex items-center gap-2'>
+              <BiLike className="h-3 w-3 md:h-6 md:w-6 lg:h-3 lg:w-3 xl:h-4 xl:w-4 text-gray-400" />
+              <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>{idea.like}</p>
+                </div>
+                <div className='flex items-center gap-2'>
+              <BiDislike className="h-3 w-3 md:h-6 md:w-6 lg:h-3 lg:w-3 xl:h-4 xl:w-4 text-gray-400" />
+              <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>{idea.like}</p>
+                </div>
+                <div className='flex items-center gap-2'>
+              <FaRegComments className="h-3 w-3 md:h-6 md:w-6 lg:h-3 lg:w-3 xl:h-4 xl:w-4 text-gray-400" />
+              <p className='text-start text-xs md:text-2xl lg:text-sm text-gray-400 font-nunito-sans font-light'>Reply</p>
+                </div>
+              </div>
+             
+              </div>
+             
+            </div>
+            <hr />
+          </div>
+            
+        ))
+      }
+     </div>
+    </div>
+      </div>
+        <div className='py-5'>
+              <p className="font-exo text-xs md:text-2xl lg:text-sm xl:text-lg">Share Article:(23)</p>
+              <div className='flex justify-start items-center gap-4 py-3'>
+    {
+     social.map((datum) => (
+
+      <div key={datum.id} className='flex justify-start items-center'>
+        
+       <p>{datum.icon}</p>
+        </div>
+     ))
+    }
+    </div>
+            </div>
      </div>
     
      

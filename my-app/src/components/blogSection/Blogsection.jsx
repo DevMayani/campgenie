@@ -180,9 +180,9 @@ const Blogsection = ({ blogs }) => {
   <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 pt-8 pb-4'>
   {
           details.map(datum => (
-            <Link key={datum.id} to={`/blog/${datum.id}`} className='flex flex-col gap-2 border rounded-xl'>
+            <Link key={datum.id} to={`/blog/${datum.id}`} className='flex flex-col gap-2 border rounded-xl  hover:shadow-2xl '>
               <img src={datum.pic} alt="school-img" className='rounded-t-xl' />
-              <div className='p-5 flex flex-col gap-4 md:gap-6 lg:gap-4'>
+              <div className='p-5 flex flex-col gap-4 md:gap-6 lg:gap-4 '>
                 <p className='text-start text-sm md:text-2xl lg:text-sm text-gray-600 font-exo'>{datum.title}</p>
                 <div className='flex items-center justify-between gap-1'>
                   <div className='flex items-center justify-start gap-1 md:gap-2 lg:gap-1'>
