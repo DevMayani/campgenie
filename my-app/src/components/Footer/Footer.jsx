@@ -5,6 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Link } from "react-router-dom";
 import * as Yup from 'yup';
 
 const Footer = () => {
@@ -134,7 +135,7 @@ const Footer = () => {
 </Formik>
 
 
-          <p className='text-xs md:text-xl lg:text-xs xl:text-sm text-start lg:w-[80%] '>
+          <p className='text-xs md:text-xl lg:text-xs xl:text-sm text-start lg:w-[80%] font-light '>
             By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
           </p>
         </div>
@@ -144,12 +145,12 @@ const Footer = () => {
           <div className=''>
             <p className='font-bold text-start text-sm md:text-xl lg:text-sm xl:text-base'>Company</p>
             <div className='flex flex-col gap-2 lg:gap-4 items-start mt-3 text-start text-xs md:text-xl lg:text-xs xl:text-sm font-light'>
-              <p>Home</p>
-              <p>About Us</p>
-              <p>Services</p>
-              <p>Blog</p>
-              <p>FAQs</p>
-              <p>Our Team</p>
+             <Link to='/' className='text-xs md:text-xl lg:text-xs font-light'>Home</Link>
+             <Link to='/about' className='text-xs md:text-xl lg:text-xs font-light'>About Us</Link>
+             <Link to='' className='text-xs md:text-xl lg:text-xs font-light'>Services</Link>
+             <Link to='/blog' className='text-xs md:text-xl lg:text-xs font-light'>Blog</Link>
+             <Link to='' className='text-xs md:text-xl lg:text-xs font-light'>FAQs</Link>
+             
             </div>
           </div>
 
@@ -176,7 +177,7 @@ const Footer = () => {
               {socials.map((datum) => (
                 <div key={datum.id} className='flex items-center justify-between gap-4 md:gap-6 lg:gap-4'>
                   <p>{datum.icon}</p>
-                  <p className='text-xs md:text-xl lg:text-xs xl:text-sm font-light'>{datum.title}</p>
+                  <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>{datum.title}</p>
                 </div>
               ))}
             </div>
@@ -203,9 +204,9 @@ const Footer = () => {
       <div className='py-4 lg:py-8 flex flex-col-reverse lg:flex-row justify-between items-center text-xs md:text-xl lg:text-xs xl:text-sm gap-y-6 md:gap-y-8 container mx-auto'>
         <p>© 2025 CampusGenie. All rights reserved.</p>
         <div className='flex gap-4 cursor-pointer underline underline-lite'>
-          <p>Privacy Policy</p>
-          <p>Terms of Service</p>
-          <p>Cookies Settings</p>
+          <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Privacy Policy</p>
+          <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Terms of Service</p>
+          <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Cookies Settings</p>
         </div>
       </div>
     </div>
