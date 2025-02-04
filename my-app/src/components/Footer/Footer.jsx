@@ -204,8 +204,12 @@ const Footer = () => {
       <div className='py-4 lg:py-8 flex flex-col-reverse lg:flex-row justify-between items-center text-xs md:text-xl lg:text-xs xl:text-sm gap-y-6 md:gap-y-8 container mx-auto'>
         <p>© 2025 CampusGenie. All rights reserved.</p>
         <div className='flex gap-4 cursor-pointer underline underline-lite'>
-          <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Privacy Policy</p>
-          <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Terms of Service</p>
+         <Link to='/privacypolicy'>
+         <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Privacy Policy</p>
+        </Link>
+         <Link to='/termofservice'>
+         <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Terms of Service</p> 
+         </Link>
           <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Cookies Settings</p>
         </div>
       </div>
