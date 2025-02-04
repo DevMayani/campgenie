@@ -135,7 +135,7 @@ const Footer = () => {
 </Formik>
 
 
-          <p className='text-xs md:text-xl lg:text-xs xl:text-sm text-start lg:w-[80%] font-light '>
+          <p className='text-xs md:text-xl lg:text-xs  text-start lg:w-[80%] font-light '>
             By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
           </p>
         </div>
