@@ -116,10 +116,10 @@ const Contact = () => {
     
         
         <a
-          href="mailto:support@campusgenie.com"
+          href="mailto:support@campusgenie.ng"
           className="text-xs md:text-2xl lg:text-sm xl:text-lg font-nunito-sans font-light"
         >
-         Support@campus.com
+         support@campusgenie.ng
         </a>
          
             </div>

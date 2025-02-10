@@ -39,34 +39,14 @@ const Footer = () => {
 
   const support = [
     {
-      id: 1,
-      icons: <IoCallOutline className="h-4 w-4 md:h-5 md:w-5" />,
-      labelone: (
-        <a
-          href="tel:+2348093555637"
-          className="text-xs md:text-xl lg:text-xs font-light"
-        >
-          +234 8093555637
-        </a>
-      ),
-      labeltwo: (
-        <a
-          href="tel:+2349035765737"
-          className="text-xs md:text-xl lg:text-xs font-light "
-        >
-          +234 9035765737
-        </a>
-      ),
-    },
-    {
       id: 2,
       icons: <MdOutlineMail className="h-4 w-4 md:h-5 md:w-5" />,
       labelone: (
         <a
-          href="mailto:support@campusgenie.com"
+          href="mailto:support@campusgenie.ng"
           className="text-xs md:text-xl lg:text-xs font-light"
         >
-          Support@campus.com
+          support@campusgenie.ng
         </a>
       ),
     },
@@ -135,7 +115,7 @@ const Footer = () => {
 </Formik>
 
 
-          <p className='text-xs md:text-xl lg:text-xs  text-start lg:w-[80%] font-light '>
+          <p className='text-xs md:text-xl lg:text-xs xl:text-sm text-start lg:w-[80%] font-light '>
             By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
           </p>
         </div>
@@ -163,10 +143,18 @@ const Footer = () => {
                   {/* <p>{item.icons}</p> */}
                   <div>
                     <p className='text-xs md:text-xl lg:text-xs font-light'>{item.labelone}</p>
-                    <p className='text-xs md:text-xl lg:text-xs font-light'>{item.labeltwo}</p>
                   </div>
                 </div>
               ))}
+              <Link to="/privacy-policy">
+              <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Privacy Policy</p>
+              </Link>
+              <Link to="/terms-of-service">
+                <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Terms of Service</p>
+              </Link>
+              <Link to="/cookie-settings">
+                <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Cookies Settings</p>
+              </Link>
             </div>
           </div>
 
@@ -204,13 +192,15 @@ const Footer = () => {
       <div className='py-4 lg:py-8 flex flex-col-reverse lg:flex-row justify-between items-center text-xs md:text-xl lg:text-xs xl:text-sm gap-y-6 md:gap-y-8 container mx-auto'>
         <p>© 2025 CampusGenie. All rights reserved.</p>
         <div className='flex gap-4 cursor-pointer underline underline-lite'>
-         <Link to='/privacypolicy'>
-         <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Privacy Policy</p>
-        </Link>
-         <Link to='/termofservice'>
-         <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Terms of Service</p> 
-         </Link>
-          <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Cookies Settings</p>
+          {/* <Link to="/privacy-policy">
+            <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Privacy Policy</p>
+          </Link>
+          <Link to="/terms-of-service">
+            <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Terms of Service</p>
+          </Link>
+          <Link to="/cookie-settings">
+            <p className='text-xs md:text-xl lg:text-xs font-light font-nunito-sans'>Cookies Settings</p>
+          </Link> */}
         </div>
       </div>
     </div>

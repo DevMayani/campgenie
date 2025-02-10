@@ -14,6 +14,8 @@ import BlogPost from '../src/pages/blogpost';
 import TermsOfService from '../src/pages/termofservice'
 import Privacypolicy from '../src/pages/privacypolicy'
 import './App.css';
+import AccountDeletion from "./pages/AccountDeletion";
+import CookiesSettings from "./pages/CookieSettings";
 
 
 const blogs = [
@@ -104,19 +106,21 @@ const blogs = [
 function App() {
   return (
     <Router>
-    <Navbar /> 
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/termofservice" element={<TermsOfService />} />
-        <Route path="/privacypolicy" element={<Privacypolicy/>} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<Privacypolicy />} />
         <Route path="/blog/:id" element={<BlogPost blogs={blogs} />} />
+        <Route path="/account-deletion" element={<AccountDeletion />} />
+        <Route path="/cookie-settings" element={<CookiesSettings />} />
         <Route path="*" element={<NotFound />} />
-    </Routes>
-    <Footer />
-  </Router>
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

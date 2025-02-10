@@ -48,7 +48,7 @@ const SectionOne = () => {
             <img src="/assets/app store.svg" className="w-[80%] md:w-[90%] lg:w-[80%] h-auto" alt="app store-img w-auto" />
           </div>
           <div>
-            <img src="/assets/Play store.svg" className="w-[80%] md:w-[90%] lg:w-[80%] h-auto" alt="play store-img" />
+            <img src="/assets/play store.svg" className="w-[80%] md:w-[90%] lg:w-[80%] h-auto" alt="play store-img" />
           </div>
         </div>
       </div>
